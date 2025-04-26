@@ -7,6 +7,9 @@
     'Noto Color Emoji';
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
+    --color-orange-400: oklch(75% 0.183 55.934);
+    --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-2xl: 1.5rem;
@@ -16,10 +19,14 @@
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --radius-4xl: 2rem;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-ashgrey: #303030;
     --color-asphaltgrey: #292929;
+    --color-tangyorange: #B35A25;
+    --color-deadgrey: #4B4B4B;
   }
 }
 @layer base {
@@ -262,6 +269,16 @@ body {
     background-color: var(--color-ashgrey);
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 400ms;
+    transition-duration: 400ms;
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-500);
+      }
+    }
   }
   .dmase {
     margin-inline: calc(var(--spacing) * 1.5);
@@ -269,9 +286,19 @@ body {
     height: calc(var(--spacing) * 15);
     width: calc(var(--spacing) * 15);
     border-radius: 0.25rem;
-    background-color: #B35A25;
+    background-color: var(--color-tangyorange);
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 400ms;
+    transition-duration: 400ms;
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-orange-400);
+      }
+    }
   }
   .otherbtns {
     margin-inline: calc(var(--spacing) * 1.5);
@@ -279,9 +306,19 @@ body {
     height: calc(var(--spacing) * 15);
     width: calc(var(--spacing) * 15);
     border-radius: 0.25rem;
-    background-color: #4B4B4B;
+    background-color: var(--color-deadgrey);
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 400ms;
+    transition-duration: 400ms;
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-400);
+      }
+    }
   }
 }
 @property --tw-translate-x {
@@ -308,6 +345,10 @@ body {
   syntax: "*";
   inherits: false;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -316,6 +357,7 @@ body {
       --tw-translate-z: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-duration: initial;
     }
   }
 }
