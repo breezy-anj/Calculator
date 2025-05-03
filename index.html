@@ -7,41 +7,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="fixed left-1/2 -translate-x-1/2 top-10 rounded-4xl border-5 border-[#6D6D6D] max-w-max bg-asphaltgrey p-2"> 
+    <div class="fixed left-1/2 -translate-x-1/2 top-10 rounded-4xl border-5 border-[#6D6D6D] bg-asphaltgrey p-2"> 
       <!--BORDER-->
-
-      <div class="flex justify-end  p-6 text-3xl font-extrabold text-white h-20 items-end">Display</div>
+      <div class="h-20">
+        <input id="display" type="text" class="w-24 h-10" readonly></input>
+      </div>
 
 
       <div class="grid grid-cols-4  text-white min-h-min min-w-max">
         <!--BUTTONS start-->
 
-        <div><button class="otherbtns hover:bg-color-[]">AC</button></div>
-        <div><button class="otherbtns text-2xl justify-center flex items-center ">^</button></div>
-        <div><button class="otherbtns text-2xl justify-center flex items-center">%</button></div>
-        <div><button class="dmase text-2xl justify-center flex items-center">/</button></div>
+        <div><button onclick="appendToDisplay('(') " class="otherbtns text-2xl">(</button></div>
+        <div><button onclick="appendToDisplay( ')') " class="otherbtns text-2xl justify-center flex items-center ">)</button></div>
+        <div><button onclick="appendToDisplay('%')" class="otherbtns text-2xl justify-center flex items-center">%</button></div>
+        <div><button onclick="appendToDisplay('/')" class="dmase text-2xl justify-center flex items-center">/</button></div>
 
-        <div><button class="nmbr">1</button></div>
-        <div><button class="nmbr">2</button></div>
-        <div><button class="nmbr">3</button></div>
-        <div><button class="dmase">X</button></div>
+        <div><button onclick="appendToDisplay('1')" class="nmbr">1</button></div>
+        <div><button onclick="appendToDisplay('2')" class="nmbr">2</button></div>
+        <div><button onclick="appendToDisplay('3')" class="nmbr">3</button></div>
+        <div><button onclick="appendToDisplay('*')" class="dmase">*</button></div>
 
-        <div><button class="nmbr">4</button></div>
-        <div><button class="nmbr">5</button></div>
-        <div><button class="nmbr">6</button></div>
-        <div><button class="dmase text-3xl justify-center flex items-center">-</button></div>
+        <div><button onclick="appendToDisplay('4')" class="nmbr">4</button></div>
+        <div><button onclick="appendToDisplay('5')" class="nmbr">5</button></div>
+        <div><button onclick="appendToDisplay('6')" class="nmbr">6</button></div>
+        <div><button onclick="appendToDisplay('-')" class="dmase text-3xl justify-center flex items-center">-</button></div>
 
-        <div><button class="nmbr">7</button></div>
-        <div><button class="nmbr">8</button></div>
-        <div><button class="nmbr">9</button></div>
-        <div><button class="dmase text-2xl justify-center flex items-center">+</button></div>
+        <div><button onclick="appendToDisplay('7')" class="nmbr">7</button></div>
+        <div><button onclick="appendToDisplay('8')" class="nmbr">8</button></div>
+        <div><button onclick="appendToDisplay('9')" class="nmbr">9</button></div>
+        <div><button onclick="appendToDisplay('+')" class="dmase text-2xl justify-center flex items-center">+</button></div>
 
-        <div><button class="nmbr"></button></div>
-        <div><button class="nmbr">0</button></div>
-        <div><button class="nmbr">.</button></div>
-        <div><button class="dmase text-2xl justify-center flex items-center">=</button></div>
+        <div><button onclick="clearDisplay('')" class="otherbtns">AC</button></div>
+        <div><button onclick="appendToDisplay('0')" class="nmbr">0</button></div>
+        <div><button onclick="appendToDisplay('.')" class="nmbr">.</button></div>
+        <div><button onclick="calculate()" class="dmase text-2xl justify-center flex items-center">=</button></div>
       </div>
       <!--BUTTONS end-->
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
